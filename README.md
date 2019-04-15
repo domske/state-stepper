@@ -22,7 +22,7 @@ npm i state-stepper
 ## Example
 
 ```html
-<app-state-stepper #stepper [steps]="steps"></app-state-stepper>
+<state-stepper #stepper [steps]="steps"></state-stepper>
 
 <ion-button (click)="stepper.nextStep('success')">OK</ion-button>
 <ion-button (click)="stepper.nextStep('warning')">Warn</ion-button>

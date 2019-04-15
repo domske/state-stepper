@@ -8,7 +8,7 @@ export interface Step {
 }
 
 @Component({
-  selector: 'app-state-stepper',
+  selector: 'state-stepper',
   templateUrl: './state-stepper.component.html',
   styleUrls: ['./state-stepper.component.scss']
 })
