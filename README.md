@@ -11,6 +11,14 @@ Anyway I appreciate for any contribution.
 
 This is a Ionic v3 component.
 
+## Install
+
+```bash
+npm i state-stepper
+```
+
+[NPM Package](https://www.npmjs.com/package/state-stepper)
+
 ## Example
 
 ```html
