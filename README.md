@@ -4,9 +4,11 @@ A states indicator for Ionic.
 
 ![](readme/screen.gif)
 
+[DEMO](https://domske.github.io/state-stepper/)
+
 ## NOTE
 
-This project is experimental and currently in work for initial usage. It may not yet work correctly.
+This project is experimental.
 
 ## Description
 
