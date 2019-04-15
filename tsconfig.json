@@ -11,7 +11,7 @@
     "lib": ["dom", "es2015"],
     "outDir": "dist"
   },
-  "exclude": ["node_modules", "dist", "scripts"],
+  "exclude": ["node_modules", "dist", "scripts", "demo"],
   "angularCompilerOptions": {
     "skipTemplateCodegen": true
   }

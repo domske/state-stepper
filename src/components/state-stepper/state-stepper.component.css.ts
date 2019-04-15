@@ -1,22 +1,22 @@
-export default `state-stepper .stepper {
+export default `.stepper {
   text-align: center;
   padding: 10px 0px;
   overflow: auto;
   white-space: nowrap;
   user-select: none; }
-  state-stepper .stepper .step {
+  .stepper .step {
     display: inline-block;
     position: relative;
     width: 100px; }
-    state-stepper .stepper .step:last-of-type {
+    .stepper .step:last-of-type {
       margin-right: 0; }
-      state-stepper .stepper .step:last-of-type::before {
+      .stepper .step:last-of-type::before {
         display: none; }
-    state-stepper .stepper .step .ani-wrapper {
+    .stepper .step .ani-wrapper {
       display: flex;
       justify-content: center;
       align-items: center; }
-    state-stepper .stepper .step .icon-wrapper {
+    .stepper .step .icon-wrapper {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -31,14 +31,14 @@ export default `state-stepper .stepper {
       transition: all 300ms ease-out;
       will-change: transform;
       font-size: 2em; }
-    state-stepper .stepper .step .text {
+    .stepper .step .text {
       opacity: 0.5;
       transition: all 300ms ease-out;
       will-change: opacity;
       margin-top: 1px; }
-      state-stepper .stepper .step .text.active {
+      .stepper .step .text.active {
         opacity: 1; }
-    state-stepper .stepper .step::before {
+    .stepper .step::before {
       display: block;
       position: absolute;
       content: '';
@@ -49,31 +49,31 @@ export default `state-stepper .stepper {
       margin-top: 27px;
       transition: all 300ms ease-out;
       will-change: background-color; }
-    state-stepper .stepper .step.active .ani-wrapper {
+    .stepper .step.active .ani-wrapper {
       animation: active 1s 300ms infinite ease-in-out; }
-    state-stepper .stepper .step.active .icon-wrapper {
+    .stepper .step.active .icon-wrapper {
       transform: scale(1); }
-    state-stepper .stepper .step.current .icon-wrapper {
+    .stepper .step.current .icon-wrapper {
       background-color: #3880ff;
       color: #ffffff; }
-    state-stepper .stepper .step.danger .ani-wrapper {
+    .stepper .step.danger .ani-wrapper {
       animation: danger 600ms 300ms ease-in-out; }
-    state-stepper .stepper .step.danger .icon-wrapper {
+    .stepper .step.danger .icon-wrapper {
       background-color: #f04141;
       color: #ffffff; }
-    state-stepper .stepper .step.warning .ani-wrapper {
+    .stepper .step.warning .ani-wrapper {
       animation: warn 1s 300ms ease-in-out; }
-    state-stepper .stepper .step.warning .icon-wrapper {
+    .stepper .step.warning .icon-wrapper {
       background-color: #ffce00;
       color: #ffffff; }
-    state-stepper .stepper .step.warning::before {
+    .stepper .step.warning::before {
       background-color: #ffce00; }
-    state-stepper .stepper .step.success .ani-wrapper {
+    .stepper .step.success .ani-wrapper {
       animation: success 1s 300ms; }
-    state-stepper .stepper .step.success .icon-wrapper {
+    .stepper .step.success .icon-wrapper {
       background-color: #10dc60;
       color: #ffffff; }
-    state-stepper .stepper .step.success::before {
+    .stepper .step.success::before {
       background-color: #10dc60; }
 
 @keyframes active {
