@@ -12,7 +12,7 @@
     "build": "npm run prebuild && ngc && npm run postbuild",
     "postbuild": "node postbuild.js && npm run buildDemo",
     "publishPackage": "npm run build && npm publish",
-    "buildDemo": "cd demo && npm run build",
+    "buildDemo": "cd demo && npm run build && node docs.js",
     "serveDemo": "cd demo && npm run serve"
   },
   "repository": {

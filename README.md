@@ -2,7 +2,7 @@
 
 A states indicator for Ionic.
 
-![](docs/screen.gif)
+![](readme/screen.gif)
 
 ## NOTE
 
