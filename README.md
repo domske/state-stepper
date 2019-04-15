@@ -57,7 +57,7 @@ steps = [
 
 ## Roadmap
 
-Folling is planned. Just ideas in unsorted order.
+Following is planned. Just ideas in unsorted order.
 
 - Support Ionic 4 (not yet tested).
 - Use Ionic color variables.
