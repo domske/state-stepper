@@ -6,6 +6,8 @@ A states indicator for Ionic.
 
 [DEMO](https://domske.github.io/state-stepper/)
 
+[Stackblitz](https://stackblitz.com/edit/ionic-state-stepper?embed=1&file=pages/home/home.html)
+
 ## NOTE
 
 This project is experimental.
