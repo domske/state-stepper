@@ -11,6 +11,42 @@ Anyway I appreciate for any contribution.
 
 This is a Ionic v3 component.
 
+## Example
+
+```html
+<app-state-stepper #stepper [steps]="steps"></app-state-stepper>
+
+<ion-button (click)="stepper.nextStep('success')">OK</ion-button>
+<ion-button (click)="stepper.nextStep('warning')">Warn</ion-button>
+<ion-button (click)="stepper.nextStep('danger')">Error</ion-button>
+<ion-button (click)="stepper.reset()">Reset</ion-button>
+```
+
+```ts
+steps = [
+  {
+    icon: 'list',
+    text: 'Input'
+  },
+  {
+    icon: 'cog',
+    text: 'Parameter'
+  },
+  {
+    icon: 'cube',
+    text: 'Save'
+  },
+  {
+    icon: 'cloud-upload',
+    text: 'Upload'
+  },
+  {
+    icon: 'checkmark',
+    text: 'Done'
+  }
+];
+```
+
 ## Roadmap
 
 Folling is planned. Just ideas in unsorted order.
