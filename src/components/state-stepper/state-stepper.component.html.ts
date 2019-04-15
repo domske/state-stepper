@@ -1,3 +1,4 @@
+export default `
 <div #stepper class="stepper">
   <div
     class="step"
@@ -11,3 +12,4 @@
     <div class="text" [class.active]="step.active">{{ step.text }}</div>
   </div>
 </div>
+`;

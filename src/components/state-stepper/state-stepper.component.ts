@@ -1,5 +1,8 @@
 import { Component, ViewChild, ElementRef, Input } from '@angular/core';
 
+import template from './state-stepper.component.html';
+import style from './state-stepper.component.css';
+
 export interface Step {
   icon: string;
   text?: string;
@@ -9,8 +12,8 @@ export interface Step {
 
 @Component({
   selector: 'state-stepper',
-  templateUrl: './state-stepper.component.html',
-  styleUrls: ['./state-stepper.component.scss']
+  template: template + '',
+  styles: [style + '']
 })
 export class StateStepperComponent {
   @ViewChild('stepper') stepperElement: ElementRef;

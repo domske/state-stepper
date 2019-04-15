@@ -59,6 +59,7 @@ steps = [
 
 Following is planned. Just ideas in unsorted order.
 
+- Find better solution to use html and scss.
 - Support Ionic 4 (not yet tested).
 - Use Ionic color variables.
 - Translate step.text by changing the layout. (e.g. accept steps as html ng-content.)
