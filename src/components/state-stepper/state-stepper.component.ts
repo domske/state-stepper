@@ -12,8 +12,8 @@ export interface Step {
 
 @Component({
   selector: 'state-stepper',
-  template: template + '',
-  styles: [style + '']
+  template: template,
+  styles: [style]
 })
 export class StateStepperComponent {
   @ViewChild('stepper') stepperElement: ElementRef;
@@ -34,6 +34,18 @@ export class StateStepperComponent {
   ];
 
   stepIndex = 0;
+
+  public stepOk() {
+    this.nextStep('success');
+  }
+
+  public stepWarn() {
+    this.nextStep('warning');
+  }
+
+  public stepError() {
+    this.nextStep('danger');
+  }
 
   public nextStep(currentStepState?: string) {
     // Current step.
