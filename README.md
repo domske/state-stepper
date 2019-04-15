@@ -4,6 +4,10 @@ A states indicator for Ionic.
 
 ![](docs/screen.gif)
 
+## NOTE
+
+This project is experimental and currently in work for initial usage. It may not yet work correctly.
+
 ## Description
 
 This is a very jung project. Please view the roadmap, before creating an issue.
