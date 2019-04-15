@@ -60,7 +60,7 @@ Folling is planned. Just ideas in unsorted order.
 
 ## License
 
-[MIT License](LINCENSE)
+[MIT License](LICENSE)
 
 Copyright (c) 2019 Dominik Geng
 
