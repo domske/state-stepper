@@ -14,5 +14,5 @@ export declare class StateStepperComponent {
     stepError(): void;
     nextStep(currentStepState?: string): void;
     reset(): void;
-    private scrollToActiveStep;
+    private scrollToActiveStep();
 }
