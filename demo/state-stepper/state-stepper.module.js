@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { StateStepperComponent } from './components/state-stepper/state-stepper.component';
 import { IonicModule } from 'ionic-angular';
-var StateStepperModule = /** @class */ (function () {
+var StateStepperModule = (function () {
     function StateStepperModule() {
     }
     StateStepperModule.decorators = [

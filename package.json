@@ -10,9 +10,9 @@
   "scripts": {
     "prebuild": "node prebuild.js",
     "build": "npm run prebuild && ngc && npm run postbuild",
-    "postbuild": "node postbuild.js && npm run buildDemo",
+    "postbuild": "node postbuild.js && npm run buildDemo && node docs.js",
     "publishPackage": "npm run build && npm publish",
-    "buildDemo": "cd demo && npm run build && node docs.js",
+    "buildDemo": "cd demo && npm run build",
     "serveDemo": "cd demo && npm run serve"
   },
   "repository": {
