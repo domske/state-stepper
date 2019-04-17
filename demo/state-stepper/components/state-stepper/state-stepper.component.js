@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef, Input } from '@angular/core';
-var StateStepperComponent = (function () {
+var StateStepperComponent = /** @class */ (function () {
     function StateStepperComponent() {
         this.steps = [
             {

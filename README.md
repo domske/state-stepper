@@ -73,7 +73,6 @@ Following is planned. Just ideas in unsorted order.
 - Translate step.text by changing the layout. (e.g. accept steps as html ng-content.)
 - Make this library neutral for every Angular project. (Not only Ionic).
 - Step content. Every step in a tab container.
-- Create demo website.
 - Testing (Unit tests).
 
 ## License
