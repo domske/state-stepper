@@ -48,8 +48,8 @@
       <ion-button onclick="stepsReset(-1)">Reset!</ion-button>
       <ion-button onclick="stepBack()">Back</ion-button>
     </p>
-    <script type="module" src="/build/state-stepper.esm.js"></script>
-    <script nomodule="" src="/build/state-stepper.js"></script>
+    <script type="module" src="build/state-stepper.esm.js"></script>
+    <script nomodule="" src="build/state-stepper.js"></script>
     <script
       type="module"
       src="https://unpkg.com/@ionic/core@latest/dist/ionic/ionic.esm.js"
@@ -77,18 +77,6 @@
       function stepBack() {
         const stateStepper = document.querySelector('state-stepper');
         stateStepper.stepBack();
-      }
-    </script>
-    <script>
-      if ('serviceWorker' in navigator && location.protocol !== 'file:') {
-        // auto-unregister service worker during dev mode
-        navigator.serviceWorker.getRegistration().then(function(registration) {
-          if (registration) {
-            registration.unregister().then(function() {
-              location.reload(true);
-            });
-          }
-        });
       }
     </script>
   </body>
