@@ -1,0 +1,23 @@
+:host {
+  .wrapper {
+    text-align: center;
+    padding: 10px 0px;
+    overflow: auto;
+    white-space: nowrap;
+    user-select: none;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+  }
+
+  .large {
+    ::slotted(state-stepper-step) {
+      --size: 120px;
+    }
+  }
+
+  .small {
+    ::slotted(state-stepper-step) {
+      --size: 40px;
+    }
+  }
+}

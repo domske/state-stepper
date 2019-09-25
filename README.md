@@ -1,84 +1,102 @@
 # State-Stepper
 
-A states indicator for Ionic.
+Progress steps visualizer.
 
-![](readme/screen.gif)
+> NOTE This version (2.x) of state-stepper is not compatible with the previous version (1.x).
+> Version 1.x is for Ionic 3 and 2.x is a standard Web-Component to use everywhere. (Also Ionic 3 and 4).
 
-[DEMO](https://domske.github.io/state-stepper/)
+![](docs/demo.gif)
 
-[Stackblitz](https://stackblitz.com/edit/ionic-state-stepper?embed=1&file=pages/home/home.html)
+Visualize your progress steps. This is a [Web-Component](https://developer.mozilla.org/en-US/docs/Web/Web_Components) you can use it everywhere and with everything you want. Every framework like [Angular](https://angular.io/), [Vue](https://vuejs.org/), [React](https://reactjs.org/) and UIs like [Ionic](https://ionicframework.com/), [Material](https://material.angular.io/) or [Vuetify](https://vuetifyjs.com). Or just use it in vanilla JavaScript or TypeScript. Just load and use it.
 
-## NOTE
+You can use any element for the icon and text. For example the `ion-icon` of [Ionic](https://ionicons.com/).
 
-This project is experimental.
+## Usage
 
-## Description
+This example shows the state-stepper element with Ionic icons and pure JavaScript. But you can adept this for each Framework. e.g. ng-for, v-for, etc. for your steps.
 
-This is a very jung project. Please view the roadmap, before creating an issue.
-Anyway I appreciate for any contribution.
-
-This is a Ionic v3 component.
-
-## Install
-
-```bash
-npm i state-stepper
-```
-
-[NPM Package](https://www.npmjs.com/package/state-stepper)
-
-## Example
+**HTML**
 
 ```html
-<state-stepper #stepper [steps]="steps"></state-stepper>
-
-<ion-button (click)="stepper.nextStep('success')">OK</ion-button>
-<ion-button (click)="stepper.nextStep('warning')">Warn</ion-button>
-<ion-button (click)="stepper.nextStep('danger')">Error</ion-button>
-<ion-button (click)="stepper.reset()">Reset</ion-button>
+<state-stepper>
+  <state-stepper-step state="danger">
+    <ion-icon name="options" slot="icon"></ion-icon>
+    <span slot="text">Options</span>
+  </state-stepper-step>
+  <state-stepper-step state="success">
+    <ion-icon name="settings" slot="icon"></ion-icon>
+    <span slot="text">Work</span>
+  </state-stepper-step>
+  <state-stepper-step state="warning">
+    <ion-icon name="save" slot="icon"></ion-icon>
+    <span slot="text">Save</span>
+  </state-stepper-step>
+  <state-stepper-step state="active">
+    <ion-icon name="cloud-upload" slot="icon"></ion-icon>
+    <span slot="text">Upload</span>
+  </state-stepper-step>
+  <state-stepper-step>
+    <ion-icon name="checkmark" slot="icon"></ion-icon>
+    <span slot="text">Complete</span>
+  </state-stepper-step>
+</state-stepper>
 ```
 
-```ts
-steps = [
-  {
-    icon: 'list',
-    text: 'Input'
-  },
-  {
-    icon: 'cog',
-    text: 'Parameter'
-  },
-  {
-    icon: 'cube',
-    text: 'Save'
-  },
-  {
-    icon: 'cloud-upload',
-    text: 'Upload'
-  },
-  {
-    icon: 'checkmark',
-    text: 'Done'
-  }
-];
+**JS**
+
+```js
+const stateStepper = document.querySelector('state-stepper');
+stateStepper.stepNext('warn');
+stateStepper.stepNext('success');
+stateStepper.stepNext('success');
+stateStepper.stepNext('danger', true);
+stateStepper.stepBack();
+stateStepper.resetSteps();
 ```
+
+Remeber `DOMContentLoaded` [event](https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event) if you get undefined.
+
+## Methods
+
+`stepNext(currentState: string, stop = false): Promise<boolean>`
+
+Jumps to the next step.
+
+| Argument     | Description                            |
+| ------------ | -------------------------------------- |
+| currentState | The state for the current active step. |
+| stop         | (Optional) Stops at current step.      |
+
+Returns `true` if the all steps are completed.
+
+---
+
+`resetSteps(stepIndex = 0): Promise<void>`
+
+Resets all steps. You can also use it to start or jump back to a specific step.
+
+| Argument  | Description                                  |
+| --------- | -------------------------------------------- |
+| stepIndex | (Optional) The index to step back. (0-based) |
+
+---
+
+`stepBack(): Promise<void>`
+
+Steps back to the previous step. One step back from the active step.
+
+---
+
+It's recommended to manage the steps by yourself instead of using the methods. Use the `state` attribute of a step.
+
+If your steps overflows the view, it automatically scrolls to the active state on initial load and every change of active step.
 
 ## Roadmap
 
-Following is planned. Just ideas in unsorted order.
-
-- Find better solution to use html and scss.
-- Support Ionic 4 (not yet tested).
-- Use Ionic color variables.
-- Translate step.text by changing the layout. (e.g. accept steps as html ng-content.)
-- Make this library neutral for every Angular project. (Not only Ionic).
-- Step content. Every step in a tab container.
-- Testing (Unit tests).
+It is planned to create an Angular wrapper for it in the future. Be free to support this software.
 
 ## License
 
-[MIT License](LICENSE)
+MIT Copyright (c) 2019 Dominik Geng
 
-Copyright (c) 2019 Dominik Geng
-
-Github @domske
+[See license](LICENSE)
