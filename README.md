@@ -23,6 +23,12 @@ npm i state-stepper
 import `state-stepper`;
 ```
 
+You can also use **unpkg**. e.g.:
+
+```html
+<script nomodule src="https://unpkg.com/browse/state-stepper@2.0.1/dist/state-stepper.js"></script>
+```
+
 [Angular Integration](https://stenciljs.com/docs/angular)
 
 ## Usage
