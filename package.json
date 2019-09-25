@@ -1,6 +1,6 @@
 {
   "name": "state-stepper",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "State-Stepper Web-Component",
   "author": {
     "name": "Dominik-Andreas Geng",
@@ -33,5 +33,13 @@
     "@stencil/core": "^1.3.3",
     "@stencil/sass": "^1.0.1"
   },
+  "keywords": [
+    "state",
+    "stepper",
+    "web-component",
+    "component",
+    "ionic",
+    "stencil"
+  ],
   "license": "MIT"
 }
