@@ -11,6 +11,20 @@ Visualize your progress steps. This is a [Web-Component](https://developer.mozil
 
 You can use any element for the icon and text. For example the `ion-icon` of [Ionic](https://ionicons.com/).
 
+## Installation
+
+This Web-Component is also available at [NPM](https://www.npmjs.com/package/state-stepper)
+
+```text
+npm i state-stepper
+```
+
+```ts
+import `state-stepper`;
+```
+
+[Angular Integration](https://stenciljs.com/docs/angular)
+
 ## Usage
 
 This example shows the state-stepper element with Ionic icons and pure JavaScript. But you can adept this for each Framework. e.g. ng-for, v-for, etc. for your steps.
