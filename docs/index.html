@@ -1,79 +1,127 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
-    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>State-Stepper Web-Component</title>
     <style>
       body {
         font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+      }
+      .flex-container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+      .flex {
+        flex: 1;
       }
     </style>
   </head>
   <body>
-    <state-stepper>
-      <state-stepper-step state="danger">
-        <ion-icon name="options" slot="icon"></ion-icon>
-        <span slot="text">Options</span>
-      </state-stepper-step>
-      <state-stepper-step state="success">
-        <ion-icon name="settings" slot="icon"></ion-icon>
-        <span slot="text">Work</span>
-      </state-stepper-step>
-      <state-stepper-step state="warning">
-        <ion-icon name="save" slot="icon"></ion-icon>
-        <span slot="text">Save</span>
-      </state-stepper-step>
-      <state-stepper-step state="active">
-        <ion-icon name="cloud-upload" slot="icon"></ion-icon>
-        <span slot="text">Upload</span>
-      </state-stepper-step>
-      <state-stepper-step>
-        <ion-icon name="checkmark" slot="icon"></ion-icon>
-        <span slot="text">Complete</span>
-      </state-stepper-step>
-    </state-stepper>
-    <p style="text-align: center;">
-      <ion-button onclick="nextStep('success')">Next Success</ion-button>
-      <ion-button onclick="nextStep('warning')">Next Warn</ion-button>
-      <ion-button onclick="nextStep('danger')">Next Error</ion-button>
-      <ion-button onclick="stepSet('danger')">Error</ion-button>
-      <ion-button onclick="stepSet('success')">Ok</ion-button>
-      <ion-button onclick="stepSet('warning')">Warn</ion-button>
-      <ion-button onclick="stepsReset()">Reset</ion-button>
-      <ion-button onclick="stepsReset(2)">Reset to 3</ion-button>
-      <ion-button onclick="stepsReset(-1)">Reset!</ion-button>
-      <ion-button onclick="stepBack()">Back</ion-button>
-    </p>
-    <script type="module" src="build/state-stepper.esm.js"></script>
-    <script nomodule="" src="build/state-stepper.js"></script>
+    <div class="flex-container">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>State-Stepper</ion-title>
+          <ion-buttons slot="end">
+            <ion-button shape="round" href="https://github.com/domske/state-stepper">
+              <ion-icon name="logo-github" slot="start"></ion-icon>
+              <span>Github</span>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+
+      <state-stepper>
+        <state-stepper-step state="danger">
+          <ion-icon name="options" slot="icon"></ion-icon>
+          <span slot="text">Options</span>
+        </state-stepper-step>
+        <state-stepper-step state="success">
+          <ion-icon name="settings" slot="icon"></ion-icon>
+          <span slot="text">Work</span>
+        </state-stepper-step>
+        <state-stepper-step state="warning">
+          <ion-icon name="save" slot="icon"></ion-icon>
+          <span slot="text">Save</span>
+        </state-stepper-step>
+        <state-stepper-step state="active">
+          <ion-icon name="cloud-upload" slot="icon"></ion-icon>
+          <span slot="text">Upload</span>
+        </state-stepper-step>
+        <state-stepper-step>
+          <ion-icon name="checkmark" slot="icon"></ion-icon>
+          <span slot="text">Complete</span>
+        </state-stepper-step>
+      </state-stepper>
+
+      <div class="flex"></div>
+
+      <p style="text-align: center;">
+        <ion-button onclick="nextStep('success')">Next Success</ion-button>
+        <ion-button onclick="nextStep('warning')">Next Warn</ion-button>
+        <ion-button onclick="nextStep('danger')">Next Error</ion-button>
+      </p>
+      <p style="text-align: center;">
+        <ion-button onclick="stepSet('danger')">Stop Error</ion-button>
+        <ion-button onclick="stepSet('success')">Stop Ok</ion-button>
+        <ion-button onclick="stepSet('warning')">Stop Warn</ion-button>
+      </p>
+      <p style="text-align: center;">
+        <ion-button onclick="stepsReset()">Reset</ion-button>
+        <ion-button onclick="stepsReset(2)">Reset to 3</ion-button>
+        <ion-button onclick="stepsReset(-1)">Reset!</ion-button>
+      </p>
+
+      <p style="text-align: center;">
+        <ion-button onclick="stepBack()">Back</ion-button>
+      </p>
+
+      <div class="flex"></div>
+
+      <ion-footer>
+        <ion-toolbar>
+          <p style="text-align: center; opacity: 0.5; font-size: 0.8em">
+            Copyright &copy 2019 Dominik Geng
+          </p>
+        </ion-toolbar>
+      </ion-footer>
+    </div>
+
+    <!-- state-stepper -->
     <script
       type="module"
-      src="https://unpkg.com/@ionic/core@latest/dist/ionic/ionic.esm.js"
+      src="https://unpkg.com/state-stepper@latest/dist/state-stepper/state-stepper.esm.js"
     ></script>
     <script
-      nomodule=""
-      src="https://unpkg.com/@ionic/core@latest/dist/ionic/ionic.js"
+      nomodule
+      src="https://unpkg.com/state-stepper@latest/dist/state-stepper/state-stepper.js"
     ></script>
+
+    <!-- ionic -->
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@ionic/core@latest/dist/ionic/ionic.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://cdn.jsdelivr.net/npm/@ionic/core@latest/dist/ionic/ionic.js"
+    ></script>
+
     <script>
       function stepSet(state) {
         const stateStepper = document.querySelector('state-stepper');
         stateStepper.stepNext(state, true);
       }
-
       function nextStep(state) {
         const stateStepper = document.querySelector('state-stepper');
         stateStepper.stepNext(state);
       }
-
       function stepsReset(index) {
         const stateStepper = document.querySelector('state-stepper');
         stateStepper.resetSteps(index);
       }
-
       function stepBack() {
         const stateStepper = document.querySelector('state-stepper');
         stateStepper.stepBack();
