@@ -81,6 +81,7 @@
 
       <p style="text-align: center;">
         <ion-button onclick="stepBack()">Back</ion-button>
+        <ion-button onclick="toggleLargeSize()">Toggle Size</ion-button>
       </p>
 
       <div class="flex"></div>
@@ -130,6 +131,14 @@
       function stepBack() {
         const stateStepper = document.querySelector('state-stepper');
         stateStepper.stepBack();
+      }
+      function toggleLargeSize() {
+        const stateStepper = document.querySelector('state-stepper');
+        if (stateStepper.hasAttribute('size')) {
+          stateStepper.removeAttribute('size');
+        } else {
+          stateStepper.setAttribute('size', 'large');
+        }
       }
     </script>
   </body>
