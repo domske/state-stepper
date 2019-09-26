@@ -26,7 +26,8 @@ import `state-stepper`;
 You can also use **unpkg**. e.g.:
 
 ```html
-<script nomodule src="https://unpkg.com/browse/state-stepper@2.0.1/dist/state-stepper.js"></script>
+<script type="module" src="https://unpkg.com/state-stepper@latest/dist/state-stepper/state-stepper.esm.js"></script>
+<script nomodule="" src="https://unpkg.com/state-stepper@latest/dist/state-stepper/state-stepper.js"></script>
 ```
 
 [Angular Integration](https://stenciljs.com/docs/angular)
