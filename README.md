@@ -11,6 +11,8 @@ Visualize your progress steps. This is a [Web-Component](https://developer.mozil
 
 You can use any element for the icon and text. For example the `ion-icon` of [Ionic](https://ionicons.com/).
 
+## [Demo](https://domske.github.io/state-stepper/)
+
 ## Installation
 
 This Web-Component is also available at [NPM](https://www.npmjs.com/package/state-stepper)
