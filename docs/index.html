@@ -25,13 +25,18 @@
         <ion-toolbar>
           <ion-title>State-Stepper</ion-title>
           <ion-buttons slot="end">
-            <ion-button shape="round" href="https://github.com/domske/state-stepper">
+            <ion-button
+              shape="round"
+              href="https://github.com/domske/state-stepper"
+            >
               <ion-icon name="logo-github" slot="start"></ion-icon>
               <span>Github</span>
             </ion-button>
           </ion-buttons>
         </ion-toolbar>
       </ion-header>
+
+      <div class="flex"></div>
 
       <state-stepper>
         <state-stepper-step state="danger">
@@ -60,13 +65,13 @@
 
       <p style="text-align: center;">
         <ion-button onclick="nextStep('success')">Next Success</ion-button>
-        <ion-button onclick="nextStep('warning')">Next Warn</ion-button>
-        <ion-button onclick="nextStep('danger')">Next Error</ion-button>
+        <ion-button onclick="nextStep('warning')">Next Warning</ion-button>
+        <ion-button onclick="nextStep('danger')">Next Danger</ion-button>
       </p>
       <p style="text-align: center;">
-        <ion-button onclick="stepSet('danger')">Stop Error</ion-button>
-        <ion-button onclick="stepSet('success')">Stop Ok</ion-button>
+        <ion-button onclick="stepSet('danger')">Stop Ok</ion-button>
         <ion-button onclick="stepSet('warning')">Stop Warn</ion-button>
+        <ion-button onclick="stepSet('success')">Stop Error</ion-button>
       </p>
       <p style="text-align: center;">
         <ion-button onclick="stepsReset()">Reset</ion-button>
