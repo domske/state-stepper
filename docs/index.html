@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>State-Stepper Web-Component</title>
+    <link rel="stylesheet" href="styles.css" />
     <style>
       body {
         font-family: Arial, Helvetica, sans-serif;
@@ -17,24 +18,35 @@
       .flex {
         flex: 1;
       }
+      .hidden {
+        display: none;
+      }
     </style>
   </head>
   <body>
-    <div class="flex-container">
+    <div class="loading">
+      <div class="boxes">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+      </div>
+    </div>
+    <div class="flex-container hidden">
       <ion-header>
         <ion-toolbar>
-          <ion-title>State-Stepper</ion-title>
+          <ion-title>State-Stepper </ion-title>
           <ion-buttons slot="end">
-            <ion-button
-              shape="round"
-              href="https://github.com/domske/state-stepper"
-            >
+            <ion-button shape="round" href="https://github.com/domske/state-stepper">
               <ion-icon name="logo-github" slot="start"></ion-icon>
               <span>Github</span>
             </ion-button>
           </ion-buttons>
         </ion-toolbar>
       </ion-header>
+
+      <p style="opacity: 0.5; font-size: 0.8em; padding: 5px; text-align: center;">
+        Web-Component - Example: Use Ionic 4 (also a Web-Components) for the icons.
+      </p>
 
       <div class="flex"></div>
 
@@ -96,24 +108,12 @@
     </div>
 
     <!-- state-stepper -->
-    <script
-      type="module"
-      src="https://unpkg.com/state-stepper@latest/dist/state-stepper/state-stepper.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/state-stepper@latest/dist/state-stepper/state-stepper.js"
-    ></script>
+    <script type="module" src="https://unpkg.com/state-stepper@latest/dist/state-stepper/state-stepper.esm.js"></script>
+    <script nomodule src="https://unpkg.com/state-stepper@latest/dist/state-stepper/state-stepper.js"></script>
 
     <!-- ionic -->
-    <script
-      type="module"
-      src="https://cdn.jsdelivr.net/npm/@ionic/core@latest/dist/ionic/ionic.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://cdn.jsdelivr.net/npm/@ionic/core@latest/dist/ionic/ionic.js"
-    ></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@latest/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@latest/dist/ionic/ionic.js"></script>
 
     <script>
       function stepSet(state) {
@@ -140,6 +140,11 @@
           stateStepper.setAttribute('size', 'large');
         }
       }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('.loading').remove();
+        document.querySelectorAll('body > .hidden').forEach(e => e.classList.remove('hidden'));
+      });
     </script>
   </body>
 </html>
