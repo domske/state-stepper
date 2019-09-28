@@ -34,6 +34,50 @@ You can also use **unpkg**. e.g.:
 
 [Angular Integration](https://stenciljs.com/docs/angular)
 
+Example:
+
+**app.module.ts**
+
+```ts
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule, FormsModule],
+  providers: [],
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+})
+export class AppModule {}
+```
+
+**main.ts**
+
+```ts
+import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
+
+import { defineCustomElements } from 'state-stepper/loader';
+
+if (environment.production) {
+  enableProdMode();
+}
+
+platformBrowserDynamic()
+  .bootstrapModule(AppModule)
+  .catch(err => console.error(err));
+
+defineCustomElements(window);
+```
+
 ## Usage
 
 This example shows the state-stepper element with Ionic icons and pure JavaScript. But you can adept this for each Framework. e.g. ng-for, v-for, etc. for your steps.
